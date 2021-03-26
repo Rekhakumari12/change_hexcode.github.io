@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+ <title>Document</title>
+ <style>
+  .btn-class{
+   height:100vh;
+  }
+ </style>
+</head>
+ <body id="body">
+    <div class="container-fluid">
+    
+      <div class=" btn-class d-flex justify-content-center align-items-center">
+       <h3 id="text" class="text-white text-bold p-3 text-center d-block"></h3>
+        <button type="button" class="btn btn-outline-dark">change color!</button>
+       </div>
+    </div>
+   <script src="bootstrap/js/jquery.js"></script>
+   <script src="bootstrap/js/popper.min.js"></script>
+   <script src="bootstrap/js/bootstrap.min.js"></script>
+   <script>
+    // const body = docuemnt.querySelector("body");
+   const body = document.querySelector("body");
+   const button = document.querySelector("button");
+   const color = ['#FF7FDB','#80DBFF','#DBFF80','#FF8086','#8A80FF','#DED414','#1497DE','#B714DB','#DB1439','#14DEB3'];
+
+   body.style.backgroundColor='#DBFF80';
+   button.onclick=changeBackgroundColor;
+
+   function changeBackgroundColor(){
+     const colorIndex = Math.round(Math.random()*color.length);
+     body.style.backgroundColor = color[colorIndex];
+     document.getElementById("text").innerText = color[colorIndex].valueOf();
+   }
+
+   </script>
+</body>
+</html>
