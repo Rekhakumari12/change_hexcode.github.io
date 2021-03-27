@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Hex Chnage Bg Color</title>
+ <style>
+  .btn-style{
+    color:white;
+    font-weight: 600;
+    background-color: hotpink;
+    border-radius: 3px;
+    font-size: 20px;
+    border: 1px solid hotpink;
+  }
+  .btn-class{
+   height:100vh;
+   display: flex;
+   text-align: center;
+  }
+  .btn-style:active{
+   background-color: rgb(247, 72, 253);
+   border:1px solid hotpink;
+  }
+  .text{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   width: 90%;
+   float: right;
+   font-size:50px;
+   text-transform:uppercase;
+   font-family:'Times New Roman', Times, serif;
+   color: white;
+   /* font-weight: 800; */
+  }
+ </style>
+</head>
+<body>
+ <div class="text">
+  <h1 class="text">#1234re</h1>
+ </div>
+
+ <div class="btn-class">
+  <button type="button" id="changeColor" class="btn-style">click!</button>
+ </div>
+</body>
+<script>
+ const hex = [1,2,3,4,5,6,7,8,9,0,'A','B','C','D','E','F'];
+ const body = document.querySelector("body");
+ body.style.backgroundColor = 'pink';
+ const button = document.querySelector("#changeColor");
+ button.addEventListener("click",changeHexColor);
+
+ function changeHexColor(){
+  let hexCode = "#"; 
+  for(let i=0; i<6; i++){
+    hexCode += hex[Math.floor(Math.random()*hex.length)];
+   }
+  document.querySelector(".text").textContent=hexCode;
+  console.log(hexCode);
+  body.style.backgroundColor = hexCode;
+ }
+</script>
+</html>
