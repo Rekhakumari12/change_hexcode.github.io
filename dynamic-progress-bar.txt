@@ -84,9 +84,17 @@
             var colg = document.getElementById("college-input").value;
             incProgressBar(colg);
         }
+        let c= 0;
         function getCond(){
             var colg = document.getElementById("conditions-input").value;
-            incProgressBar(colg);
+            c++;
+            if(c%2==0){
+             c=c-2;
+             incProgressBar(colg);
+            }
+            else{
+             incProgressBar(colg);
+            }
         }
         var count = 0;
         function incProgressBar(param){
